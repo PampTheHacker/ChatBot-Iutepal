@@ -1,0 +1,56 @@
+{
+  "intents": [
+    {
+      "tag": "bienvenida",
+      "patterns": [
+        "hola",
+        "buenas",
+        "buenos dias",
+        "buenas tardes",
+        "buenas noches",
+        "ayuda",
+        "help",
+        "holi",
+        "informacion",
+        "necesito informacion",
+        "buenas necesito informacion",
+        "info",
+        "qlq"
+      ],
+      "responses": [
+        "Hola, Esta hablando con el chatbot del Iutepal ¿en que puedo ayudarle?"
+      ]
+    },
+    {
+      "tag": "despedida",
+      "patterns": [
+        "adios",
+        "chao",
+        "hasta luego",
+        "muchas gracias",
+        "salir",
+        "cerrar",
+        "finalizar",
+        "suficiente info",
+        "no"
+      ],
+      "responses": [
+        "Gracias por usar el chabot del iutepal espero fuera de su agrado, Hasta luego :)"
+      ]
+    },
+    {
+      "tag": "costos",
+      "patterns": [
+        "detalles de precios",
+        "costos",
+        "cuento cuesta",
+        "precio de la inscripcion",
+        "inscripcion montos",
+        "monto",
+        "detalle costo",
+        "info precio"
+      ],
+      "responses": ["El costo de la inscripcion varia segun lo que se requiera"]
+    }
+  ]
+}
