@@ -8,11 +8,11 @@ from nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-with open('intents.json', 'r') as json_data:
+with open('intents.json', 'r', encoding='utf-8') as json_data:
     intents = json.load(json_data)
 
 FILE = "data.pth"
-data = torch.load(FILE)
+data = torch.load(FILE, weights_only=True)
 
 input_size = data["input_size"]
 hidden_size = data["hidden_size"]
@@ -43,15 +43,21 @@ def get_response(msg):
     if prob.item() > 0.75:
         for intent in intents['intents']:
             if tag == intent["tag"]:
-                return random.choice(intent['responses'])
+                response = random.choice(intent['responses'])
+                buttons = intent.get('buttons', [])
+                return {
+                    "answer": response,
+                    "buttons": buttons
+                }
     
-    return "No he entendido la pregunta, intente nuevamente..."
-
+    return {
+        "answer": "No he entendido la pregunta, intente nuevamente...",
+        "buttons": []
+    }
 
 if __name__ == "__main__":
     print("Chatbot de ayuda al usurario 'salir' para terminar")
     while True:
-        # sentence = "do you use credit cards?"
         sentence = input("Usuario: ")
         if sentence == "salir":
             break

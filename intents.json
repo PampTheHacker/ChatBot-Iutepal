@@ -18,7 +18,21 @@
         "qlq"
       ],
       "responses": [
-        "Hola, Esta hablando con el chatbot del Iutepal ¿en que puedo ayudarle?"
+        "Hola, estás hablando con el chatbot del Iutepal ¿En qué puedo ayudarte?"
+      ],
+      "buttons": [
+        {
+          "text": "Ver costos",
+          "value": "costos"
+        },
+        {
+          "text": "Horarios",
+          "value": "horarios"
+        },
+        {
+          "text": "Carreras disponibles",
+          "value": "carreras"
+        }
       ]
     },
     {
@@ -34,23 +48,76 @@
         "suficiente info",
         "no"
       ],
-      "responses": [
-        "Gracias por usar el chabot del iutepal espero fuera de su agrado, Hasta luego :)"
-      ]
+      "responses": ["Gracias por usar el chatbot del Iutepal. ¡Hasta luego!"],
+      "buttons": []
     },
     {
       "tag": "costos",
       "patterns": [
         "detalles de precios",
         "costos",
-        "cuento cuesta",
+        "cuanto cuesta",
         "precio de la inscripcion",
         "inscripcion montos",
         "monto",
         "detalle costo",
         "info precio"
       ],
-      "responses": ["El costo de la inscripcion varia segun lo que se requiera"]
+      "responses": [
+        "El costo de la inscripción varía según el programa académico."
+      ],
+      "buttons": [
+        {
+          "text": "Ver carreras",
+          "value": "carreras"
+        },
+        {
+          "text": "Información de contacto",
+          "value": "contacto"
+        }
+      ]
+    },
+    {
+      "tag": "carreras",
+      "patterns": [
+        "carreras disponibles",
+        "carreras",
+        "que carreras ofrecen",
+        "programas academicos",
+        "estudios",
+        "oferta academica"
+      ],
+      "responses": [
+        "Ofrecemos carreras como Informática, Administración, Contabilidad, Enfermería y más."
+      ],
+      "buttons": []
+    },
+    {
+      "tag": "horarios",
+      "patterns": [
+        "horarios",
+        "cuales son los horarios",
+        "horario de atencion",
+        "tiempos de atencion"
+      ],
+      "responses": [
+        "Nuestros horarios de atención son de lunes a viernes de 8:00 AM a 6:00 PM."
+      ],
+      "buttons": []
+    },
+    {
+      "tag": "contacto",
+      "patterns": [
+        "contacto",
+        "informacion de contacto",
+        "como contactar",
+        "numero de telefono",
+        "correo"
+      ],
+      "responses": [
+        "Puede contactarnos al correo info@iutepal.edu o al teléfono (123) 456-7890."
+      ],
+      "buttons": []
     }
   ]
 }
